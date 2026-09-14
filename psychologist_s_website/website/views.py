@@ -1,6 +1,6 @@
 #КОНТРОЛЛЕР БЭКЕНДА
 from django.shortcuts import render, redirect
-from models import Appointment
+from .models import Appointment
 
 # Create your views here.
 def index(request):

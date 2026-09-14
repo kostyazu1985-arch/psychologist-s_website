@@ -10,13 +10,18 @@ initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'website/style.css' %}">
 </head>
 <body>
+
+<!-- Самая верхняя точка сайта, к которой устремится кнопка «Наверх» -->
+    <div id="top-page"></div>
+
 <!-- Фиксированное меню (Шапка сайта) -->
     <header class="main-header">
         <div class="logo">Марина Вальдер</div>
         <nav class="nav-menu">
             <a href="#about">Обо мне</a>
-            <a href="#Prices">Стоимость</a>
+            <a href="#prices">Стоимость</a>
             <a href="#booking">Запись</a>
+            <a href="#contacts">Контакты</a>
         </nav>
     </header>
 <!-- Первое окно сайта (Приветствие) -->
@@ -45,6 +50,7 @@ initial-scale=1.0">
             </div>
         </div>
     </section>
+
 <!-- Раздел прайс-листа -->
     <section id="prices" class="section-padding bg-light">
         <h2>Стоимость сессий</h2>
@@ -60,11 +66,13 @@ initial-scale=1.0">
 <!-- Форма записи с интеграцией вашего мотивирующего текста -->
     <section id="booking" class="section-padding">
         <h2>Записаться на консультацию</h2>
-<!-- ВСТАВКА ВАШЕГО ТЕКСТА -->
+
+        <!-- ВСТАВКА ВАШЕГО ТЕКСТА -->
         <p class="cta-motivate">Снова оказываетесь в одной и той же точке?</p>
         <p class="subtitle">С этим можно работать. Оставьте заявку или
         напишите мне в личные сообщения.</p>
-<!-- Форма, отправляющая пакет данных методом POST -->
+
+        <!-- Форма, отправляющая пакет данных методом POST -->
         <form method="POST" class="booking-form">
             {% csrf_token %}
             {% if error_message %}
@@ -85,7 +93,8 @@ initial-scale=1.0">
                 <label>Ваш запрос</label>
                 <textarea name="request" rows="4" required placeholder="Опишите кратко, с чем хотите поработать"></textarea>
             </div>
-<!-- ЗАЩИТА ПЕРСОНАЛЬНЫХ ДАННЫХ -->
+
+            <!-- ЗАЩИТА ПЕРСОНАЛЬНЫХ ДАННЫХ -->
             <div class="checkbox-group">
                 <input type="checkbox" name="agree_data" id="agree_data" required>
                 <label for="agree_data">
@@ -102,19 +111,40 @@ initial-scale=1.0">
 <!-- ВСТАВКА ВАШИХ КОНТАКТОВ -->
             <div class="direct-contacts">
                 <p>Или напишите мне напрямую:</p>
-                <a href="https://t.me" target="_blank"
-                class="contact-link">Telegram</a>
-                <a href="https://wa.me" target="_blank"
-                class="contact-link">WhatsApp</a>
+                <a href="https://t.me" target="_blank" class="contact-link">Telegram</a>
+                <a href="https://wa.me" target="_blank" class="contact-link">WhatsApp</a>
             </div>
         </form>
     </section>
+
+<!-- Раздел контактов -->
+    <section id="contacts" class="section-padding bg-light">
+        <h2>Контакты</h2>
+        <p class="subtitle">Вы можете связаться со мной любым удобным способом</p>
+
+        <div class="contacts-grid">
+            <div class="contacts-info">
+            <!-- Список текстовых контактов -->
+                <div class="contact-item">
+                    <h3>Телефон для связи:</h3>
+                    <p><a href="tel:+79650301313" class="phone-link">+7 (965) 030-13-13</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>Email:</h3>
+                    <p><a href="mailto:info@psy-valder.ru" class="email-link">info@psy-valder.ru</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 <!-- Подвал (Футер сайта) -->
     <footer class="main-footer">
-        <p>Марина Вальдер | ИНН </p>
+        <p>Марина Вальдер</p>
         <p>© 2026 Сайт профессионального психолога, психотерапевта,
             сексолога. Все права защищены законом РФ.</p>
     </footer>
+<!-- КНОПКА НАВЕРХ -->
+    <a href="#top-page" class="btn-scroll-top" title="Наверх">▲</a>
 
 </body>
 </html>

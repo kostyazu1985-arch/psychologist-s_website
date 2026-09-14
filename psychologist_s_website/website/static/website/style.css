@@ -1,0 +1,223 @@
+/* ОФОРМЛЕНИЕ */
+
+
+/* Обнуление дефолтных отступов всех браузеров */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Плавный скроллинг страницы при клике на ссылки меню */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2b2b2b;
+    background-color: #faf8f5;
+}
+
+/* Оформление фиксированной шапки */
+.main-header {
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #556b2f;
+}
+
+.nav-menu a {
+    color: #444444;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover { color: #556b2f; }
+
+/* Главный приветственный экран */
+.hero {
+    background-color: #e3ebd8;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero h1 { font-size: 42px; color: #33421e; margin-bottom: 10px; }
+.hero h2 { font-size: 18px; font-weight: normal; color: #666666; margin-bottom: 25px; }
+
+/* Оформление кнопок */
+.btn {
+    background: #556b2f;
+    color: #ffffff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+.btn:hover { background: #3d4f22; }
+
+/* Секции разметки */
+.section-padding { padding: 70px 8%; text-align: center; }
+.bg-light { background: #f2f5ee; }
+h2 { font-size: 28px; margin-bottom: 10px; color: #33421e; }
+
+/* Текст вашего призыва к действию */
+.cta-motivate {
+    font-size: 20px;
+    color: #33421e;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.subtitle { color: #777777; margin-bottom: 40px; }
+
+/* Сетки блоков и адаптивные карточки */
+.about-grid, .price-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-card, .price-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 6px;
+    max-width: 350px;
+    flex: 1 1 300px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.02);
+}
+
+.price-card.feature { border: 2px solid #556b2f; }
+.price-val { font-size: 24px; font-weight: bold; color: #556b2f; margin: 15px 0; }
+
+/* Форма онлайн-записи */
+.booking-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; margin-bottom: 6px; font-weight: bold; font-size: 14px; }
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Оформление чекбокса конфиденциальности */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 20px 0;
+}
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-top: 4px;
+    cursor: pointer;
+}
+.checkbox-group label {
+    font-size: 13px;
+    font-weight: normal;
+    color: #555555;
+    line-height: 1.4;
+}
+.form-link { color: #556b2f; text-decoration: underline; }
+
+/* Красный блок вывода критических ошибок бэкенда */
+.error-alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.btn-submit { width: 100%; font-weight: bold; }
+
+/* Блок мессенджеров */
+.direct-contacts {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed #dddddd;
+}
+.direct-contacts p { font-size: 14px; color: #666666; margin-bottom: 10px; }
+.contact-link {
+    color: #556b2f;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.contact-link:hover { text-decoration: underline; }
+
+/* --- СТИЛИЗАЦИЯ НОВОГО РАЗДЕЛА КОНТАКТОВ --- */
+.contacts-grid { display: flex; gap: 40px; max-width: 1000px; margin: 0 auto; text-align: left; align-items: center; flex-wrap: wrap; }
+.contacts-info, .contacts-map { flex: 1 1 450px; }
+.contact-item { margin-bottom: 20px; }
+.contact-item h3 { font-size: 16px; color: #33421e; margin-bottom: 4px; }
+.phone-link, .email-link { color: #556b2f; text-decoration: none; font-weight: bold; }
+.phone-link:hover, .email-link:hover { text-decoration: underline; }
+
+.main-footer { background: #222222; color: #aaaaaa; padding: 30px; text-align: center; font-size: 14px; }
+.main-footer p { margin-bottom: 5px; }
+
+/* --- ФИКСИРОВАННАЯ КНОПКА «НАВЕРХ» --- */
+.btn-scroll-top {
+    position: fixed;            /* Прикрепляем кнопку к экрану, чтобы она не уплывала при скролле */
+    bottom: 30px;               /* Отступ 30 пикселей от нижнего края экрана */
+    right: 30px;                /* Отступ 30 пикселей от правого края экрана */
+    background-color: #556b2f;  /* Фирменный оливковый цвет фона */
+    color: #ffffff;             /* Белый цвет стрелочки */
+    width: 45px;                /* Ширина кнопки */
+    height: 45px;               /* Высота кнопки */
+    border-radius: 50%;         /* Делаем кнопку идеально круглой */
+    display: flex;
+    justify-content: center;    /* Центрируем стрелочку по горизонтали */
+    align-items: center;        /* Центрируем стрелочку по вертикали */
+    text-decoration: none;      /* Убираем подчеркивание у ссылки */
+    font-size: 18px;            /* Размер стрелочки */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Придаем красивую объемную тень */
+    z-index: 9999;              /* Поднимаем кнопку выше всех остальных слоев на сайте */
+    transition: background-color 0.3s, transform 0.2s; /* Плавные переходы для анимаций */
+}
+
+/* Анимация при наведении мыши на кнопку «Наверх» */
+.btn-scroll-top:hover {
+    background-color: #3d4f22;  /* Цвет становится темнее */
+    transform: translateY(-3px); /* Кнопка кокетливо приподнимается на 3 пикселя вверх */
+}
