@@ -1,223 +1,276 @@
-/* ОФОРМЛЕНИЕ */
-
-
-/* Обнуление дефолтных отступов всех браузеров */
+/* Обнуление дефолтных отступов */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Плавный скроллинг страницы при клике на ссылки меню */
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #2b2b2b;
-    background-color: #faf8f5;
+    color: #2c3e50;
+    background-color: #fdfdfd;
 }
 
-/* Оформление фиксированной шапки */
+/* Корректная остановка при скролле под фиксированную шапку */
+section {
+    scroll-margin-top: 90px;
+}
+
+/* Шапка сайта с красивым эффектом стекла (glassmorphism) */
 .main-header {
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 8%;
+    padding: 18px 8%;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: #556b2f;
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f9b8e; /* Сочный изумрудно-мятный */
+    letter-spacing: -0.5px;
 }
 
 .nav-menu a {
-    color: #444444;
+    color: #4f5f6f;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 25px;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     transition: color 0.3s;
 }
+.nav-menu a:hover { color: #0f9b8e; }
 
-.nav-menu a:hover { color: #556b2f; }
-
-/* Главный приветственный экран */
+/* Новый яркий первый экран с градиентом */
 .hero {
-    background-color: #e3ebd8;
-    height: 55vh;
+    background: linear-gradient(135deg, #e6f4f1 0%, #cbece6 100%);
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding-top: 80px;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero h1 { font-size: 42px; color: #33421e; margin-bottom: 10px; }
-.hero h2 { font-size: 18px; font-weight: normal; color: #666666; margin-bottom: 25px; }
+.hero h1 {
+    font-size: 48px;
+    color: #1a3636;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+.hero h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #40534c;
+    margin-bottom: 30px;
+}
 
-/* Оформление кнопок */
+/* Главная акцентная кнопка */
 .btn {
-    background: #556b2f;
+    background: #0f9b8e;
     color: #ffffff;
-    padding: 12px 30px;
+    padding: 14px 35px;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 30px; /* Более округлые стильные края */
     display: inline-block;
     border: none;
     cursor: pointer;
     font-size: 16px;
-    transition: background 0.3s;
+    font-weight: bold;
+    box-shadow: 0 6px 20px rgba(15, 155, 142, 0.25);
+    transition: all 0.3s ease;
 }
-.btn:hover { background: #3d4f22; }
+.btn:hover {
+    background: #0c7f75;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(15, 155, 142, 0.35);
+}
 
 /* Секции разметки */
-.section-padding { padding: 70px 8%; text-align: center; }
-.bg-light { background: #f2f5ee; }
-h2 { font-size: 28px; margin-bottom: 10px; color: #33421e; }
+.section-padding { padding: 80px 8%; text-align: center; }
+.bg-light { background: #f4faf9; } /* Нежно-мятный фоновый оттенок */
 
-/* Текст вашего призыва к действию */
-.cta-motivate {
-    font-size: 20px;
-    color: #33421e;
-    font-weight: bold;
-    margin-bottom: 5px;
+.section-title {
+    font-size: 32px;
+    color: #1a3636;
+    margin-bottom: 12px;
+    font-weight: 800;
+    position: relative;
 }
-.subtitle { color: #777777; margin-bottom: 40px; }
 
-/* Сетки блоков и адаптивные карточки */
-.about-grid, .price-grid {
+.subtitle { color: #607d8b; margin-bottom: 50px; font-size: 16px; }
+
+/* Сетка блоков и красивые объемные карточки */
+.about-grid, .price-grid, .diplomas-grid {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.about-card, .price-card {
+.about-card, .price-card, .diploma-card {
     background: #ffffff;
-    padding: 30px;
-    border-radius: 6px;
-    max-width: 350px;
-    flex: 1 1 300px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.02);
+    padding: 40px 30px;
+    border-radius: 16px; /* Закругленные современные углы */
+    max-width: 360px;
+    flex: 1 1 310px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); /* Мягкие объемные тени */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+    border: 1px solid rgba(15, 155, 142, 0.05);
 }
 
-.price-card.feature { border: 2px solid #556b2f; }
-.price-val { font-size: 24px; font-weight: bold; color: #556b2f; margin: 15px 0; }
+.about-card:hover, .diploma-card:hover, .price-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(15, 155, 142, 0.1);
+}
 
-/* Форма онлайн-записи */
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about-card h3, .price-card h3, .diploma-card h3 {
+    font-size: 20px;
+    color: #1a3636;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+/* Стили раздела образования */
+.diploma-badge {
+    display: inline-block;
+    background: #e6f4f1;
+    color: #0f9b8e;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+.diploma-inst { font-size: 14px; color: #0f9b8e; font-weight: bold; margin-bottom: 10px; }
+.diploma-desc { color: #546e7a; font-size: 14px; }
+
+/* Оформление карточек тарифов */
+.price-val { font-size: 28px; font-weight: 800; color: #0f9b8e; margin: 15px 0; }
+
+.price-card.feature {
+    border: 2px solid #0f9b8e;
+    background: linear-gradient(180deg, #ffffff 0%, #f7fcfb 100%);
+    position: relative;
+}
+.feature-badge {
+    position: absolute;
+    top: -14px;
+    left: 30px;
+    background: #0f9b8e;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 14px;
+    border-radius: 20px;
+}
+
+/* Модная, стильная форма записи */
 .booking-form {
-    max-width: 500px;
+    max-width: 520px;
     margin: 0 auto;
     text-align: left;
     background: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.02);
 }
 
-.form-group { margin-bottom: 18px; }
-.form-group label { display: block; margin-bottom: 6px; font-weight: bold; font-size: 14px; }
+.form-group { margin-bottom: 22px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 14px; color: #34495e; }
 .form-group input, .form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+    padding: 12px 16px;
+    border: 1px solid #cfd8dc;
+    border-radius: 8px;
     font-size: 14px;
+    background-color: #fafbfc;
+    transition: all 0.3s;
+}
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #0f9b8e;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(15, 155, 142, 0.1);
 }
 
-/* Оформление чекбокса конфиденциальности */
-.checkbox-group {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin: 20px 0;
-}
-.checkbox-group input[type="checkbox"] {
-    width: auto;
-    margin-top: 4px;
-    cursor: pointer;
-}
-.checkbox-group label {
-    font-size: 13px;
-    font-weight: normal;
-    color: #555555;
-    line-height: 1.4;
-}
-.form-link { color: #556b2f; text-decoration: underline; }
+/* Чекбокс оферты */
+.checkbox-group { display: flex; align-items: flex-start; gap: 12px; margin: 25px 0; }
+.checkbox-group input[type="checkbox"] { width: auto; margin-top: 4px; cursor: pointer; scale: 1.1; }
+.checkbox-group label { font-size: 13px; color: #546e7a; line-height: 1.4; }
+.form-link { color: #0f9b8e; font-weight: 600; }
 
-/* Красный блок вывода критических ошибок бэкенда */
 .error-alert {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-    padding: 12px;
-    border-radius: 4px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-size: 14px;
+    background-color: #ffebee; color: #c62828; border: 1px solid #ffcdd2;
+    padding: 12px 16px; border-radius: 8px; font-weight: bold; margin-bottom: 20px; font-size: 14px;
 }
-.btn-submit { width: 100%; font-weight: bold; }
+.btn-submit { width: 100%; padding: 16px; font-size: 16px; }
 
-/* Блок мессенджеров */
-.direct-contacts {
-    text-align: center;
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px dashed #dddddd;
-}
-.direct-contacts p { font-size: 14px; color: #666666; margin-bottom: 10px; }
+/* Социальные контакты в форме */
+.direct-contacts { text-align: center; margin-top: 30px; padding-top: 25px; border-top: 1px solid #eceff1; }
+.direct-contacts p { font-size: 14px; color: #78909c; margin-bottom: 12px; }
 .contact-link {
-    color: #556b2f;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-    font-size: 15px;
+    display: inline-block; padding: 8px 20px; margin: 0 5px;
+    border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 14px; color: white;
 }
-.contact-link:hover { text-decoration: underline; }
+.contact-link.tg { background-color: #2ca5e0; }
+.contact-link.wa { background-color: #25d366; }
+.contact-link:hover { opacity: 0.9; transform: translateY(-1px); }
 
-/* --- СТИЛИЗАЦИЯ НОВОГО РАЗДЕЛА КОНТАКТОВ --- */
+/* Контакты с картой */
 .contacts-grid { display: flex; gap: 40px; max-width: 1000px; margin: 0 auto; text-align: left; align-items: center; flex-wrap: wrap; }
 .contacts-info, .contacts-map { flex: 1 1 450px; }
-.contact-item { margin-bottom: 20px; }
-.contact-item h3 { font-size: 16px; color: #33421e; margin-bottom: 4px; }
-.phone-link, .email-link { color: #556b2f; text-decoration: none; font-weight: bold; }
+.contact-item { margin-bottom: 24px; }
+.contact-item h3 { font-size: 17px; color: #1a3636; margin-bottom: 6px; }
+.phone-link, .email-link { color: #0f9b8e; text-decoration: none; font-weight: 700; }
 .phone-link:hover, .email-link:hover { text-decoration: underline; }
 
-.main-footer { background: #222222; color: #aaaaaa; padding: 30px; text-align: center; font-size: 14px; }
-.main-footer p { margin-bottom: 5px; }
+.main-footer { background: #1a252f; color: #95a5a6; padding: 40px 8%; text-align: center; font-size: 14px; }
 
-/* --- ФИКСИРОВАННАЯ КНОПКА «НАВЕРХ» --- */
+/* ЯРКАЯ КНОПКА «НАВЕРХ» */
 .btn-scroll-top {
-    position: fixed;            /* Прикрепляем кнопку к экрану, чтобы она не уплывала при скролле */
-    bottom: 30px;               /* Отступ 30 пикселей от нижнего края экрана */
-    right: 30px;                /* Отступ 30 пикселей от правого края экрана */
-    background-color: #556b2f;  /* Фирменный оливковый цвет фона */
-    color: #ffffff;             /* Белый цвет стрелочки */
-    width: 45px;                /* Ширина кнопки */
-    height: 45px;               /* Высота кнопки */
-    border-radius: 50%;         /* Делаем кнопку идеально круглой */
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    background-color: #0f9b8e;
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     display: flex;
-    justify-content: center;    /* Центрируем стрелочку по горизонтали */
-    align-items: center;        /* Центрируем стрелочку по вертикали */
-    text-decoration: none;      /* Убираем подчеркивание у ссылки */
-    font-size: 18px;            /* Размер стрелочки */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Придаем красивую объемную тень */
-    z-index: 9999;              /* Поднимаем кнопку выше всех остальных слоев на сайте */
-    transition: background-color 0.3s, transform 0.2s; /* Плавные переходы для анимаций */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 6px 20px rgba(15, 155, 142, 0.3);
+    z-index: 9999;
+    transition: all 0.3s ease;
 }
-
-/* Анимация при наведении мыши на кнопку «Наверх» */
 .btn-scroll-top:hover {
-    background-color: #3d4f22;  /* Цвет становится темнее */
-    transform: translateY(-3px); /* Кнопка кокетливо приподнимается на 3 пикселя вверх */
+    background-color: #0c7f75;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(15, 155, 142, 0.4);
 }
