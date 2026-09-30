@@ -236,8 +236,11 @@ section {
     display: inline-block; padding: 8px 20px; margin: 0 5px;
     border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 14px; color: white;
 }
-.contact-link.tg { background-color: #2ca5e0; }
-.contact-link.wa { background-color: #25d366; }
+.contact-link.tg {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%) !important;
+    box-shadow: 0 6px 20px rgba(79, 172, 254, 0.3) !important;
+}
+.contact-link.insta {background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;}
 .contact-link:hover { opacity: 0.9; transform: translateY(-1px); }
 
 /* Контакты с картой */
@@ -288,4 +291,13 @@ section {
 .element-show {
     opacity: 1;                 /* Блок становится видимым */
     transform: translateY(0);    /* Блок возвращается на свое исходное место */
+}
+
+.btn-social.insta {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.btn-social.tg {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    box-shadow: 0 6px 20px rgba(79, 172, 254, 0.2);
 }
