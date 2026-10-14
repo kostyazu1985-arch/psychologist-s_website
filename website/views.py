@@ -56,3 +56,9 @@ def index(request):
         return redirect('index')
 
     return render(request, 'website/index.html')
+
+def oferta(request):
+    return render(request, "website/oferta.html")
+
+def privacy(request):
+    return render(request, "website/privacy.html")

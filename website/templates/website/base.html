@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Марина Вальдер{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'website/style.css' %}">
+</head>
+<body>
+    <!-- Самая верхняя точка сайта -->
+    <div id="top-page"></div>
+
+    <!-- Фиксированное меню -->
+    <header class="main-header">
+        <div class="logo">Марина Вальдер</div>
+        <nav class="nav-menu">
+            <a href="#about">Обо мне</a>
+            <a href="#diplomas">Дипломы</a>
+            <a href="#prices">Стоимость</a>
+            <a href="#booking">Запись</a>
+            <a href="#contacts">Контакты</a>
+            <a href="{% url 'oferta' %}">Оферта</a>
+            <a href="{% url 'privacy' %}">Политика</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="main-footer">
+        <p>Марина Вальдер</p>
+        <p>© 2026 Сайт профессионального психолога, психотерапевта, сексолога. Все права защищены законом РФ.</p>
+    </footer>
+
+    <a href="#top-page" class="btn-scroll-top" title="Наверх">▲</a>
+
+    <script>
+        function onEntry(entry) {
+            entry.forEach(change => {
+                if (change.isIntersecting) {
+                    change.target.classList.add('element-show');
+                }
+            });
+        }
+
+        let options = { threshold: [0.15] };
+        let observer = new IntersectionObserver(onEntry, options);
+        let elements = document.querySelectorAll('.hidden-fade');
+        for (let elm of elements) {
+            observer.observe(elm);
+        }
+    </script>
+</body>
+</html>
